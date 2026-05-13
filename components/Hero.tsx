@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(9,132,227,0.08),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,0,0,0.06),transparent_70%)]"
       />
       <div className="container-px mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <motion.div

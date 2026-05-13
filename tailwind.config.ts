@@ -9,30 +9,30 @@ const config: Config = {
     extend: {
       colors: {
         charcoal: {
-          DEFAULT: "#2D3436",
-          50: "#F5F6F7",
-          100: "#E6E8EA",
-          200: "#C8CCCF",
-          300: "#A4AAAE",
-          400: "#6C7378",
-          500: "#2D3436",
-          600: "#262C2E",
-          700: "#1F2426",
-          800: "#171B1D",
-          900: "#0F1213"
+          DEFAULT: "#1A1A1A",
+          50: "#F7F7F7",
+          100: "#EDEDED",
+          200: "#D9D9D9",
+          300: "#B3B3B3",
+          400: "#7A7A7A",
+          500: "#1A1A1A",
+          600: "#141414",
+          700: "#0F0F0F",
+          800: "#0A0A0A",
+          900: "#000000"
         },
         clinical: {
-          DEFAULT: "#0984E3",
-          50: "#EAF5FE",
-          100: "#CFE7FC",
-          200: "#9FCFF9",
-          300: "#6FB7F6",
-          400: "#3F9FF3",
-          500: "#0984E3",
-          600: "#076BB8",
-          700: "#05528C",
-          800: "#033961",
-          900: "#022036"
+          DEFAULT: "#1A1A1A",
+          50: "#F2F2F2",
+          100: "#E5E5E5",
+          200: "#CCCCCC",
+          300: "#A6A6A6",
+          400: "#666666",
+          500: "#333333",
+          600: "#1A1A1A",
+          700: "#111111",
+          800: "#0A0A0A",
+          900: "#000000"
         }
       },
       fontFamily: {
@@ -40,8 +40,8 @@ const config: Config = {
         display: ["Montserrat", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        soft: "0 10px 30px -12px rgba(45, 52, 54, 0.15)",
-        card: "0 4px 24px -8px rgba(9, 132, 227, 0.12)"
+        soft: "0 10px 30px -12px rgba(0, 0, 0, 0.15)",
+        card: "0 4px 24px -8px rgba(0, 0, 0, 0.10)"
       },
       letterSpacing: {
         tightish: "-0.015em"
