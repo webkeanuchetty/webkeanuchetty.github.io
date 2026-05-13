@@ -26,7 +26,7 @@ const services = [
     description:
       "Primary Patient-Centred Health Care: a specialised, holistic framework for assessing, treating and progressing patients across rehabilitation, performance and long-term wellness.",
     image:
-      "https://images.unsplash.com/photo-1606613715279-d4dac3ee5c14?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
   }
 ];
 
