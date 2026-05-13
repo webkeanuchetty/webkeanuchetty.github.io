@@ -24,7 +24,7 @@ export default function About() {
         >
           <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden shadow-soft">
             <Image
-              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80"
+              src="/KC2.jpeg"
               alt="Keanu Chetty — PPCHC Physiotherapist"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
