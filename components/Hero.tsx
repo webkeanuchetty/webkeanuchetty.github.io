@@ -23,12 +23,17 @@ export default function Hero() {
     requestAnimationFrame(tick);
   }, []);
   return (
-    <section
-      className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden"
-      style={{ backgroundImage: "url('/KC-Hero1.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-    >
-      <div aria-hidden className="absolute inset-0 bg-black/30" />
-      <div className="container-px mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
+      {/* Background image — plain img for reliable mobile rendering */}
+      <img
+        src="/KC-Hero1.jpg"
+        alt=""
+        aria-hidden
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+      {/* Overlay */}
+      <div aria-hidden className="absolute inset-0 bg-black/40 z-[1]" />
+      <div className="relative z-[2] container-px mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

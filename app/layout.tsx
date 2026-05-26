@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import Loader from "@/components/Loader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,7 +42,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="font-sans bg-white text-charcoal">{children}</body>
+      <body className="font-sans bg-white text-charcoal">
+        <Loader />
+        {children}
+      </body>
     </html>
   );
 }
