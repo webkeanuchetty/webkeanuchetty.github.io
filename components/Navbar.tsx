@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Activity } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -31,17 +32,17 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-px mx-auto max-w-7xl flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="grid place-items-center w-9 h-9 rounded-full bg-clinical text-white">
-            <Activity className="w-4 h-4" strokeWidth={2.5} />
-          </span>
-          <span className="font-display font-semibold tracking-tightish text-charcoal">
-            Keanu Chetty
-            <span className="hidden sm:inline text-charcoal-300 font-normal">
-              {" "}
-              · Physiotherapy
-            </span>
-          </span>
+        <a href="#" className="flex items-center">
+          <Image
+            src="/KC-Logo-nw2.png"
+            alt="Keanu Chetty Physiotherapy"
+            width={360}
+            height={144}
+            className={`h-[120px] w-auto object-contain transition-all duration-300 ${
+              scrolled ? "" : "brightness-0 invert"
+            }`}
+            priority
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

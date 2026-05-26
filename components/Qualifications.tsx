@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Syringe, Dumbbell, Stethoscope, GraduationCap } from "lucide-react";
+import Reveal from "./Reveal";
 
 const items = [
   {
@@ -30,14 +31,14 @@ export default function Qualifications() {
   return (
     <section id="qualifications" className="section bg-charcoal-50/40">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <span className="eyebrow">Credentials</span>
           <h2 className="h2 mt-4">Qualifications & Certifications</h2>
           <p className="lead mt-4">
             A foundation of rigorous training and evidence-based specialisation
             — built to deliver measurable clinical outcomes.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {items.map((it, i) => (

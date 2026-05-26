@@ -1,16 +1,33 @@
 "use client";
 
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const target = 5000;
+    const duration = 2000;
+    const startTime = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  }, []);
   return (
-    <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,0,0,0.06),transparent_70%)]"
-      />
+    <section
+      className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden"
+      style={{ backgroundImage: "url('/KC-Hero1.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+    >
+      <div aria-hidden className="absolute inset-0 bg-black/30" />
       <div className="container-px mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -18,14 +35,14 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="lg:col-span-6"
         >
-          <span className="eyebrow">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-charcoal">
             <ShieldCheck className="w-3.5 h-3.5" /> PPCHC Specialist
           </span>
-          <h1 className="h1 mt-5">
+          <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tightish text-charcoal leading-[1.05] mt-5">
             Expert Physiotherapy
-            <span className="block text-clinical">& Advanced Recovery.</span>
+            <span className="block text-charcoal">& Advanced Recovery.</span>
           </h1>
-          <p className="lead mt-6 max-w-xl">
+          <p className="text-base md:text-lg text-charcoal leading-relaxed mt-6 max-w-xl">
             Specialist PPCHC Physiotherapist Keanu Chetty. Restoring movement
             through clinical excellence — combining manual therapy, dry
             needling and advanced strapping for measurable outcomes.
@@ -34,60 +51,23 @@ export default function Hero() {
             <a href="#contact" className="btn-primary">
               Book Consultation <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="#services" className="btn-secondary">
+            <a href="#services" className="inline-flex items-center justify-center gap-2 rounded-full border border-charcoal-200 bg-white px-6 py-3 text-sm font-medium text-charcoal transition hover:border-charcoal hover:bg-charcoal-50">
               View Services
             </a>
           </div>
 
-          <dl className="mt-12 grid grid-cols-3 gap-6 max-w-md">
-            {[
-              { k: "5+", v: "Certifications" },
-              { k: "100%", v: "Evidence Based" },
-              { k: "1:1", v: "Patient Focus" }
-            ].map((s) => (
-              <div key={s.v}>
-                <dt className="font-display text-2xl font-semibold text-charcoal">
-                  {s.k}
-                </dt>
-                <dd className="text-xs text-charcoal-400 mt-1 uppercase tracking-wider">
-                  {s.v}
-                </dd>
-              </div>
-            ))}
+          <dl className="mt-12">
+            <div>
+              <dt className="font-display text-4xl font-semibold text-charcoal">
+                {count >= 5000 ? "5000+" : count.toLocaleString()}
+              </dt>
+              <dd className="text-xs text-charcoal mt-1 uppercase tracking-wider">
+                Patients Treated
+              </dd>
+            </div>
           </dl>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          className="lg:col-span-6 relative"
-        >
-          <div className="relative aspect-[4/5] w-full max-w-xl mx-auto rounded-3xl overflow-hidden shadow-soft">
-            <Image
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80"
-              alt="Physiotherapy clinical session"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="hidden md:block absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-card border border-charcoal-100 max-w-xs"
-          >
-            <p className="text-xs uppercase tracking-wider text-clinical-600 font-semibold">
-              Clinical Pillar
-            </p>
-            <p className="mt-2 text-sm text-charcoal-500">
-              Integrated manual therapy and dry needling protocols designed
-              around your recovery goals.
-            </p>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

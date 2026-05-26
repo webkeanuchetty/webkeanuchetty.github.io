@@ -1,17 +1,18 @@
-import { Activity } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-charcoal-100 bg-white">
       <div className="container-px mx-auto max-w-7xl py-14 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="grid place-items-center w-9 h-9 rounded-full bg-clinical text-white">
-              <Activity className="w-4 h-4" strokeWidth={2.5} />
-            </span>
-            <span className="font-display font-semibold text-charcoal">
-              Keanu Chetty Physiotherapy
-            </span>
+          <div className="flex items-center">
+            <Image
+              src="/KC-Logo-nw2.png"
+              alt="Keanu Chetty Physiotherapy"
+              width={420}
+              height={168}
+              className="h-36 w-auto object-contain"
+            />
           </div>
           <p className="mt-4 text-sm text-charcoal-400 max-w-md leading-relaxed">
             Specialist PPCHC physiotherapy — manual therapy, dry needling and

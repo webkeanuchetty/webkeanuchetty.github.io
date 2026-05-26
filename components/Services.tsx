@@ -2,6 +2,7 @@
 
 import { HandHeart, Dumbbell, HeartPulse } from "lucide-react";
 import ServiceCard from "./ServiceCard";
+import Reveal from "./Reveal";
 
 const services = [
   {
@@ -35,14 +36,14 @@ export default function Services() {
     <section id="services" className="section">
       <div className="container-px mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <span className="eyebrow">Clinical Pillars</span>
             <h2 className="h2 mt-4">Core Services</h2>
             <p className="lead mt-4">
               Three clinical pillars, one outcome: restored movement, reduced
               pain and confidence in your body again.
             </p>
-          </div>
+          </Reveal>
         </div>
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
