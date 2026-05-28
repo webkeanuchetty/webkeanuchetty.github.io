@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="lg:col-span-6"
+          className="lg:col-span-6 text-center lg:text-left"
         >
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-white/70">
             <ShieldCheck className="w-3.5 h-3.5" /> D.K. Chetty Physiotherapy
@@ -55,7 +55,7 @@ export default function Hero() {
           <p className="mt-3 text-xs text-white/50 tracking-wide">
             ✓ Registered with all major medical aids
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start">
             <a href="#contact" className="btn-primary">
               Book Consultation <ArrowRight className="w-4 h-4" />
             </a>
@@ -64,7 +64,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <dl className="mt-12">
+          <dl className="mt-12 flex flex-col items-center lg:items-start">
             <div>
               <dt className="font-display text-4xl font-semibold text-white">
                 {count >= 5000 ? "5000+" : count.toLocaleString()}
