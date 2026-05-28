@@ -1,11 +1,38 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
   const [count, setCount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    // Set muted as a DOM attribute — required for iOS Safari autoplay
+    vid.setAttribute("muted", "");
+    vid.muted = true;
+
+    const tryPlay = () => { vid.play().catch(() => {}); };
+
+    // Try immediately
+    tryPlay();
+
+    // Retry once media is ready (handles slow/mobile networks)
+    vid.addEventListener("canplay", tryPlay, { once: true });
+
+    // Last resort: play on first user touch (iOS Low Power Mode)
+    const onTouch = () => { tryPlay(); document.removeEventListener("touchstart", onTouch); };
+    document.addEventListener("touchstart", onTouch);
+
+    return () => {
+      vid.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("touchstart", onTouch);
+    };
+  }, []);
 
   useEffect(() => {
     const target = 5000;
@@ -26,6 +53,7 @@ export default function Hero() {
     <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
       {/* Background video */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
