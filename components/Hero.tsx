@@ -24,13 +24,18 @@ export default function Hero() {
   }, []);
   return (
     <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
-      {/* Background image — plain img for reliable mobile rendering */}
-      <img
-        src="/KC-H1.png"
-        alt=""
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover z-0"
-      />
+      >
+        <source src="/KC-Hero5-opt.mp4" type="video/mp4" />
+      </video>
       {/* Overlay */}
       <div aria-hidden className="absolute inset-0 bg-black/40 z-[1]" />
       <div className="relative z-[2] container-px mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
