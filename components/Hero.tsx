@@ -34,7 +34,7 @@ export default function Hero() {
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/KC-Hero5-opt.mp4" type="video/mp4" />
+        <source src="/KC-Hero5.mp4" type="video/mp4" />
       </video>
       {/* Overlay */}
       <div aria-hidden className="absolute inset-0 bg-black/40 z-[1]" />
