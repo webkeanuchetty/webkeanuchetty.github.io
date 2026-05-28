@@ -26,7 +26,7 @@ export default function Hero() {
     <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
       {/* Background image — plain img for reliable mobile rendering */}
       <img
-        src="/KC-Hero1.jpg"
+        src="/KC-H1.png"
         alt=""
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -40,33 +40,36 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="lg:col-span-6"
         >
-          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-charcoal">
-            <ShieldCheck className="w-3.5 h-3.5" /> PPCHC Specialist
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-white/70">
+            <ShieldCheck className="w-3.5 h-3.5" /> D.K. Chetty Physiotherapy
           </span>
-          <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tightish text-charcoal leading-[1.05] mt-5">
-            Expert Physiotherapy
-            <span className="block text-charcoal">& Advanced Recovery.</span>
+          <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tightish text-white leading-[1.05] mt-5">
+            Elevate your
+            <span className="block">Movement.</span>
           </h1>
-          <p className="text-base md:text-lg text-charcoal leading-relaxed mt-6 max-w-xl">
-            Specialist PPCHC Physiotherapist Keanu Chetty. Restoring movement
+          <p className="text-base md:text-lg text-white/85 leading-relaxed mt-6 max-w-xl">
+            Specialist PPCHC Physiotherapist D.K. Chetty. Elevating movement
             through clinical excellence — combining manual therapy, dry
             needling and advanced strapping for measurable outcomes.
+          </p>
+          <p className="mt-3 text-xs text-white/50 tracking-wide">
+            ✓ Registered with all major medical aids
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#contact" className="btn-primary">
               Book Consultation <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="#services" className="inline-flex items-center justify-center gap-2 rounded-full border border-charcoal-200 bg-white px-6 py-3 text-sm font-medium text-charcoal transition hover:border-charcoal hover:bg-charcoal-50">
+            <a href="#services" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm px-6 py-3 text-sm font-medium text-white transition hover:bg-white/20">
               View Services
             </a>
           </div>
 
           <dl className="mt-12">
             <div>
-              <dt className="font-display text-4xl font-semibold text-charcoal">
+              <dt className="font-display text-4xl font-semibold text-white">
                 {count >= 5000 ? "5000+" : count.toLocaleString()}
               </dt>
-              <dd className="text-xs text-charcoal mt-1 uppercase tracking-wider">
+              <dd className="text-xs text-white/60 mt-1 uppercase tracking-wider">
                 Patients Treated
               </dd>
             </div>

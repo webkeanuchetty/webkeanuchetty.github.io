@@ -1,33 +1,45 @@
 "use client";
 
-import { HandHeart, Dumbbell, HeartPulse } from "lucide-react";
+import { Activity, Home, HeartPulse, ShieldCheck, Building2, Syringe } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 import Reveal from "./Reveal";
 
 const services = [
   {
-    icon: HandHeart,
-    title: "Manual Therapy & Dry Needling",
+    icon: Activity,
+    title: "Post-Operative Care",
     description:
-      "An integrated approach combining hands-on manual therapy with certified dry needling (Theory & Practical, Levels 1 & 2) to release trigger points, restore mobility and accelerate pain relief.",
-    image:
-      "https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=1200&q=80"
+      "Structured rehab protocols following lower limb surgery, ensuring optimal healing, restored mobility and a confident return to daily life."
   },
   {
-    icon: Dumbbell,
-    title: "Specialized Strapping",
+    icon: Home,
+    title: "Home Visits",
     description:
-      "Advanced strapping protocols across Kinesiology, Rigid, Dynamic and Athletic techniques — engineered to stabilise joints, offload tissue and support return-to-sport rehabilitation.",
-    image:
-      "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=80"
+      "We bring expert physiotherapy directly to your doorstep, offering professional, personalised care for comfortable convenient rehabilitation in your own space."
   },
   {
     icon: HeartPulse,
-    title: "PPCHC Clinical Care",
+    title: "Chronic Pain Management",
     description:
-      "Primary Patient-Centred Health Care: a specialised, holistic framework for assessing, treating and progressing patients across rehabilitation, performance and long-term wellness.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
+      "Multi-modal approaches combining manual therapy, exercise, and education to help you manage and overcome persistent pain conditions."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Wellness and Prevention",
+    description:
+      "Proactive movement assessments and corrective exercise programs to prevent injury and optimize your long-term physical well-being."
+  },
+  {
+    icon: Building2,
+    title: "Hospital Care",
+    description:
+      "We provide expert care to ill/critically ill patients by focusing on early mobility and respiratory support."
+  },
+  {
+    icon: Syringe,
+    title: "Dry Needling",
+    description:
+      "Relieve muscle tension and accelerate recovery with our professional dry needling therapy. This targeted treatment pinpoints muscle knots, effectively reducing chronic pain, improving flexibility, and restoring healthy movement."
   }
 ];
 
@@ -35,16 +47,14 @@ export default function Services() {
   return (
     <section id="services" className="section">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <Reveal className="max-w-2xl">
-            <span className="eyebrow">Clinical Pillars</span>
-            <h2 className="h2 mt-4">Core Services</h2>
-            <p className="lead mt-4">
-              Three clinical pillars, one outcome: restored movement, reduced
-              pain and confidence in your body again.
-            </p>
-          </Reveal>
-        </div>
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">What We Offer</span>
+          <h2 className="h2 mt-4">Our Services</h2>
+          <p className="lead mt-4">
+            Comprehensive physiotherapy care tailored to your individual needs
+            — from post-operative recovery to chronic pain management.
+          </p>
+        </Reveal>
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (

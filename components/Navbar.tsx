@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#qualifications", label: "Qualifications" },
   { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#testimonials", label: "Patient Stories" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -35,7 +35,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center">
           <Image
             src="/KC-Logo-nw2.png"
-            alt="Keanu Chetty Physiotherapy"
+            alt="D.K. Chetty Physiotherapy"
             width={360}
             height={144}
             className={`h-[120px] w-auto object-contain transition-all duration-300 ${

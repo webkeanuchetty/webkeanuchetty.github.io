@@ -24,7 +24,7 @@ export default function Contact() {
           className="lg:col-span-5"
         >
           <span className="eyebrow">Get in touch</span>
-          <h2 className="h2 mt-4">Book a consultation.</h2>
+          <h2 className="h2 mt-4">Get in touch.</h2>
           <p className="lead mt-4">
             Share a few details and we&apos;ll be in touch to confirm your
             appointment. For urgent enquiries, please call directly.
@@ -35,31 +35,41 @@ export default function Contact() {
               {
                 icon: Phone,
                 title: "Phone",
-                value: "+27 (0) 00 000 0000"
+                value: "060 503 5728"
               },
               {
                 icon: Mail,
                 title: "Email",
-                value: "info@keanuchetty.co.za"
+                value: "info@dkchettyphysiotherapy.co.za"
               },
               {
                 icon: MapPin,
                 title: "Practice",
-                value: "Durban, KwaZulu-Natal, South Africa"
+                value: "27 St Andrew's Avenue, Impilo Building, Wits Education Campus, Parktown, Johannesburg, 2531"
               }
             ].map((c) => (
               <div key={c.title} className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-clinical-50 text-clinical-600 grid place-items-center shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-charcoal-50 text-charcoal grid place-items-center shrink-0">
                   <c.icon className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-charcoal-400 font-semibold">
                     {c.title}
                   </p>
-                  <p className="text-charcoal mt-1">{c.value}</p>
+                  <p className="text-charcoal mt-1 text-sm">{c.value}</p>
                 </div>
               </div>
             ))}
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-charcoal-50 text-charcoal grid place-items-center shrink-0">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-charcoal-400 font-semibold">Hours</p>
+                <p className="text-charcoal mt-1 text-sm">Mon – Fri: 07:00 – 17:00</p>
+                <p className="text-charcoal text-sm">Sat – Sun: 08:00 – 13:00</p>
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -67,7 +77,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6 }}
           onSubmit={handleSubmit}
           className="lg:col-span-7 bg-white rounded-3xl border border-charcoal-100 p-6 md:p-10 shadow-soft"
         >

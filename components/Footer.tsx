@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="flex items-center">
             <Image
               src="/KC-Logo-nw2.png"
-              alt="Keanu Chetty Physiotherapy"
+              alt="D.K. Chetty Physiotherapy"
               width={420}
               height={168}
               className="h-36 w-auto object-contain"
@@ -16,7 +16,10 @@ export default function Footer() {
           </div>
           <p className="mt-4 text-sm text-charcoal-400 max-w-md leading-relaxed">
             Specialist PPCHC physiotherapy — manual therapy, dry needling and
-            advanced strapping. Restoring movement through clinical excellence.
+            advanced strapping. Elevating movement through clinical excellence.
+          </p>
+          <p className="mt-3 text-xs text-charcoal-300">
+            ✓ Registered with all major medical aids
           </p>
         </div>
 
@@ -25,9 +28,9 @@ export default function Footer() {
             Practice
           </p>
           <ul className="mt-4 space-y-2 text-sm text-charcoal-500">
-            <li>Durban, KwaZulu-Natal</li>
-            <li>South Africa</li>
-            <li>HPCSA Reg: PT XXXXXXX</li>
+            <li>27 St Andrew's Avenue</li>
+            <li>Impilo Building, Wits Education Campus</li>
+            <li>Parktown, Johannesburg, 2531</li>
           </ul>
         </div>
 
@@ -36,8 +39,8 @@ export default function Footer() {
             Contact
           </p>
           <ul className="mt-4 space-y-2 text-sm text-charcoal-500">
-            <li>+27 (0) 00 000 0000</li>
-            <li>info@keanuchetty.co.za</li>
+            <li>060 503 5728</li>
+            <li>info@dkchettyphysiotherapy.co.za</li>
             <li>
               <a href="#contact" className="text-clinical-600 hover:underline">
                 Book a consultation
@@ -48,7 +51,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-charcoal-100">
         <div className="container-px mx-auto max-w-7xl py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-400">
-          <p>© {new Date().getFullYear()} Keanu Chetty Physiotherapy. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} D.K. Chetty Physiotherapy. All rights reserved.</p>
           <p>HPCSA registered · POPIA compliant</p>
         </div>
       </div>
