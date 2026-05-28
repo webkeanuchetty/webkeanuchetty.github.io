@@ -48,7 +48,7 @@ export default function Hero() {
             <span className="block">Movement.</span>
           </h1>
           <p className="text-base md:text-lg text-white/85 leading-relaxed mt-6 max-w-xl">
-            Specialist PPCHC Physiotherapist D.K. Chetty. Elevating movement
+            Specialist Physiotherapist D.K. Chetty. Elevating movement
             through clinical excellence — combining manual therapy, dry
             needling and advanced strapping for measurable outcomes.
           </p>

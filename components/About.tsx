@@ -17,7 +17,7 @@ export default function About() {
           <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden shadow-soft">
             <Image
               src="/KC-potrait.png"
-              alt="D.K. Chetty — PPCHC Physiotherapist"
+              alt="D.K. Chetty — Physiotherapist"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"

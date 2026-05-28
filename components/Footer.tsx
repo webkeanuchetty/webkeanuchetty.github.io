@@ -15,7 +15,7 @@ export default function Footer() {
             />
           </div>
           <p className="mt-4 text-sm text-charcoal-400 max-w-md leading-relaxed">
-            Specialist PPCHC physiotherapy — manual therapy, dry needling and
+            Specialist physiotherapy — manual therapy, dry needling and
             advanced strapping. Elevating movement through clinical excellence.
           </p>
           <p className="mt-3 text-xs text-charcoal-300">
