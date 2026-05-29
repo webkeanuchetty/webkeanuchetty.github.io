@@ -1,9 +1,30 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function About() {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const target = 5000;
+    const duration = 2000;
+    const startTime = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  }, [hasStarted]);
   return (
     <section id="about" className="section bg-charcoal-50/40">
       <div className="container-px mx-auto max-w-7xl grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -46,6 +67,24 @@ export default function About() {
             plan is built around your goals, your timeline, and your
             body&apos;s unique response.
           </p>
+
+          <motion.dl
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            onViewportEnter={() => setHasStarted(true)}
+            className="mt-10 flex flex-col items-center"
+          >
+            <div className="text-center">
+              <dt className="font-display text-4xl font-semibold text-charcoal">
+                {count >= 5000 ? "5000+" : count.toLocaleString()}
+              </dt>
+              <dd className="text-xs text-charcoal-400 mt-2 uppercase tracking-wider font-semibold">
+                Patients Treated
+              </dd>
+            </div>
+          </motion.dl>
         </motion.div>
       </div>
     </section>

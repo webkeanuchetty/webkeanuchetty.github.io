@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
-  const [count, setCount] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -33,24 +32,8 @@ export default function Hero() {
       document.removeEventListener("touchstart", onTouch);
     };
   }, []);
-
-  useEffect(() => {
-    const target = 5000;
-    const duration = 2000;
-    const startTime = performance.now();
-
-    const tick = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  }, []);
   return (
-    <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
+    <section className="relative min-h-screen md:min-h-auto pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden flex flex-col md:block justify-center">
       {/* Background video */}
       <video
         ref={videoRef}
@@ -62,7 +45,7 @@ export default function Hero() {
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/KC-Hero5-updated.mp4" type="video/mp4" />
+        <source src="/KC-Hero5-updated1.mp4" type="video/mp4" />
       </video>
       {/* Overlay */}
       <div aria-hidden className="absolute inset-0 bg-black/40 z-[1]" />
@@ -88,25 +71,14 @@ export default function Hero() {
           <p className="mt-3 text-xs text-white/50 tracking-wide">
             ✓ Registered with all major medical aids
           </p>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start">
-            <a href="#contact" className="btn-primary">
-              Book Consultation <ArrowRight className="w-4 h-4" />
+          <div className="mt-8 flex gap-2 justify-center lg:justify-start">
+            <a href="#contact" className="btn-primary text-xs md:text-sm px-4 md:px-6 py-2 md:py-3">
+              Book Consultation <ArrowRight className="w-3 h-3" />
             </a>
-            <a href="#services" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm px-6 py-3 text-sm font-medium text-white transition hover:bg-white/20">
+            <a href="#services" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-medium text-white transition hover:bg-white/20">
               View Services
             </a>
           </div>
-
-          <dl className="mt-12 flex flex-col items-center lg:items-start">
-            <div>
-              <dt className="font-display text-4xl font-semibold text-white">
-                {count >= 5000 ? "5000+" : count.toLocaleString()}
-              </dt>
-              <dd className="text-xs text-white/60 mt-1 uppercase tracking-wider">
-                Patients Treated
-              </dd>
-            </div>
-          </dl>
         </motion.div>
 
       </div>
