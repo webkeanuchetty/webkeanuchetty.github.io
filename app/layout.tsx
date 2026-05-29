@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   description:
     "Award-winning physiotherapist in Parktown, Johannesburg. Specializing in manual therapy, dry needling, sports rehabilitation, and chronic pain management. HPCSA registered. Book your consultation today.",
   icons: {
-    icon: "/KC-Logo-no-bg-updated.png",
-    apple: "/KC-Logo-no-bg-updated.png"
+    icon: "/KC-Logo-no-words.png",
+    apple: "/KC-Logo-no-words.png"
   },
   keywords: [
     "Physiotherapist Johannesburg",
