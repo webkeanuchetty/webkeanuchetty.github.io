@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "D.K. Chetty Physiotherapy | Expert Physiotherapist in Parktown, Johannesburg",
   description:
     "Award-winning physiotherapist in Parktown, Johannesburg. Specializing in manual therapy, dry needling, sports rehabilitation, and chronic pain management. HPCSA registered. Book your consultation today.",
+  icons: {
+    icon: "/KC-Logo-no-bg-updated.png",
+    apple: "/KC-Logo-no-bg-updated.png"
+  },
   keywords: [
     "Physiotherapist Johannesburg",
     "Physiotherapy Parktown",
