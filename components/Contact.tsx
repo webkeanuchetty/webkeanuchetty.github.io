@@ -2,15 +2,41 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setLoading(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSent(true);
+        e.currentTarget.reset();
+        setTimeout(() => setSent(false), 4000);
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again later.");
+      console.error("Form submission error:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,6 +107,18 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="lg:col-span-7 bg-white rounded-3xl border border-charcoal-100 p-6 md:p-10 shadow-soft"
         >
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New Physiotherapy Enquiry from D.K. Chetty Website" />
+          <input type="hidden" name="from_name" value="D.K. Chetty Physiotherapy" />
+          <input type="hidden" name="redirect" value="https://dkchettyphysiotherapy.co.za#contact" />
+
+          {error && (
+            <div className="mb-5 p-4 rounded-2xl bg-red-50 border border-red-200 flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-red-700">{error}</p>
+            </div>
+          )}
+
           <div className="grid sm:grid-cols-2 gap-5">
             <Field label="Full name" name="name" placeholder="Jane Doe" />
             <Field
@@ -112,10 +150,14 @@ export default function Contact() {
             <p className="text-xs text-charcoal-400">
               By submitting you agree to be contacted about your enquiry.
             </p>
-            <button type="submit" className="btn-primary">
+            <button type="submit" disabled={loading || sent} className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed">
               {sent ? (
                 <>
                   Message sent <CheckCircle2 className="w-4 h-4" />
+                </>
+              ) : loading ? (
+                <>
+                  Sending... <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 </>
               ) : (
                 <>
