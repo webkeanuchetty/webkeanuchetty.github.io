@@ -16,19 +16,18 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Keanu Chetty | PPCHC Physiotherapist — Expert Physiotherapy & Recovery",
+  title: "D.K. Chetty Physiotherapy — Expert Physiotherapy & Recovery",
   description:
-    "Specialist PPCHC Physiotherapist Keanu Chetty. Manual therapy, dry needling and advanced strapping for clinical recovery and sports performance.",
+    "Specialist Physiotherapist D.K. Chetty. Manual therapy, dry needling and advanced strapping for clinical recovery and sports performance.",
   keywords: [
     "Physiotherapist",
-    "PPCHC",
     "Dry Needling",
     "Kinesiology Tape",
     "Sports Rehabilitation",
-    "Keanu Chetty"
+    "D.K. Chetty"
   ],
   openGraph: {
-    title: "Keanu Chetty | PPCHC Physiotherapist",
+    title: "D.K. Chetty Physiotherapy",
     description:
       "Expert physiotherapy and advanced recovery. Restoring movement through clinical excellence.",
     type: "website"
