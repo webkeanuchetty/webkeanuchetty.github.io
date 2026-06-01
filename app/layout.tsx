@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "D.K. Chetty Physiotherapy | Expert Physiotherapist in Parktown, Johannesburg",
   description:
-    "Award-winning physiotherapist in Parktown, Johannesburg. Specializing in manual therapy, dry needling, sports rehabilitation, and chronic pain management. HPCSA registered. Book your consultation today.",
+    "Award-winning physiotherapist in Parktown, Johannesburg. Experienced in manual therapy, dry needling, sports rehabilitation, and chronic pain management. HPCSA registered. Book your consultation today.",
   icons: {
     icon: "/KC-Logo-no-words.png",
     apple: "/KC-Logo-no-words.png"

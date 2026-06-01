@@ -107,7 +107,7 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="lg:col-span-7 bg-white rounded-3xl border border-charcoal-100 p-6 md:p-10 shadow-soft"
         >
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="access_key" value="8168dbc2-8a94-4d20-9530-5369628e52f7" />
           <input type="hidden" name="subject" value="New Physiotherapy Enquiry from D.K. Chetty Website" />
           <input type="hidden" name="from_name" value="D.K. Chetty Physiotherapy" />
           <input type="hidden" name="redirect" value="https://dkchettyphysiotherapy.co.za#contact" />
