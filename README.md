@@ -1,7 +1,3 @@
-# Keanu Chetty — PPCHC Physiotherapy
-
-Premium marketing site for Keanu Chetty, specialist PPCHC physiotherapist. Built with Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion and Lucide.
-
 ## Stack
 
 - **Next.js 14** (App Router) + **TypeScript**
@@ -10,28 +6,6 @@ Premium marketing site for Keanu Chetty, specialist PPCHC physiotherapist. Built
 - **lucide-react** icons
 - **next/image** with Unsplash remote patterns
 
-## Getting started
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:3000.
-
-## Build
-
-```bash
-npm run build
-npm start
-```
-
-## Deploy to Vercel
-
-1. Push this folder to a GitHub repository.
-2. In Vercel, **Import Project** → select the repo.
-3. Framework preset: **Next.js** (auto-detected). No env vars needed.
-4. Deploy. `next.config.mjs` already whitelists `images.unsplash.com`.
 
 ## Project structure
 
@@ -60,8 +34,3 @@ next.config.mjs     # Unsplash remote images
 - **Clean White** `#FFFFFF`
 - Display: **Montserrat** · Body: **Inter**
 
-## Notes
-
-- The contact form is a UI-only demo. Wire it to an API route, Resend, Formspree, or your CRM as needed.
-- Replace placeholder phone, email, HPCSA registration and address in `components/Contact.tsx` and `components/Footer.tsx`.
-- Replace Unsplash placeholders with licensed photography of the practice.
