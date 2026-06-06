@@ -14,7 +14,8 @@ export default function Contact() {
     setLoading(true);
     setError("");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -26,7 +27,7 @@ export default function Contact() {
 
       if (data.success) {
         setSent(true);
-        e.currentTarget.reset();
+        form.reset();
         setTimeout(() => setSent(false), 4000);
       } else {
         setError("Failed to send message. Please try again.");
